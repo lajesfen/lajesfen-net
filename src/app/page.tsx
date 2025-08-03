@@ -29,7 +29,7 @@ export default function Home() {
         </section>
         <section className="mb-6 flex flex-col gap-6">
           <p>
-            I like building things: apps, tools, games or whatever I'm currently
+            I like building things: apps, tools, games or whatever I&apos;m currently
             obsessed with.
           </p>
           <p>
@@ -39,7 +39,7 @@ export default function Home() {
             other real-time projects involving content creators.
           </p>
           <p>
-            I'm always learning, building and trying out new ideas. Mostly for
+            I&apos;m always learning, building and trying out new ideas. Mostly for
             fun, sometimes for something bigger.
           </p>
         </section>
