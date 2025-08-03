@@ -1,103 +1,116 @@
+import Experience from "@/components/experience";
+import Project from "@/components/project";
+import Data from "@/data/home.json";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+    <div className="min-h-screen flex items-center justify-center">
+      <main className="relative outline-1 outline-black p-8 max-w-lg mx-auto">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+          src={"/graphics/email.gif"}
+          alt="Email"
+          width={52}
+          height={52}
+          className="absolute bottom-4 left-16"
+          unoptimized
         />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+        <section className="mb-6">
+          <h1>Luciano A. Jesfen</h1>
+          <div className="flex flex-row items-center gap-2">
+            <p>Software Developer</p>
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src={"/icons/computer_explorer.png"}
+              alt="Computer Explorer"
+              width={24}
+              height={24}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+          </div>
+        </section>
+        <section className="mb-6 flex flex-col gap-6">
+          <p>
+            I like building things: apps, tools, games or whatever I'm currently
+            obsessed with.
+          </p>
+          <p>
+            My main interests are Computer Graphics and anything art-related.
+            Before getting into programming, I worked as 3D Art Lead at a game
+            studio, where I created low-poly assets for Twitch Rivals events and
+            other real-time projects involving content creators.
+          </p>
+          <p>
+            I'm always learning, building and trying out new ideas. Mostly for
+            fun, sometimes for something bigger.
+          </p>
+        </section>
+        <section className="flex flex-col mb-6 w-full gap-5">
+          <div className="flex flex-row items-center gap-2 mx-auto">
+            <h1>Projects</h1>
+            <Image
+              src={"/icons/directory.png"}
+              alt="Directory"
+              width={24}
+              height={24}
+            />
+          </div>
+          <ul className="flex flex-col w-full">
+            {Data.projects.map((project, index) => (
+              <Project
+                key={index}
+                title={project.title}
+                description={project.description}
+                path={project.path}
+              />
+            ))}
+          </ul>
+        </section>
+        <section className="flex flex-col mb-6 w-full gap-4">
+          <div className="flex flex-row items-center gap-2 mx-auto">
+            <h1>Previous Experience</h1>
+            <Image
+              src={"/icons/calendar.png"}
+              alt="Directory"
+              width={24}
+              height={24}
+            />
+          </div>
+          <ul className="flex flex-col w-full">
+            {Data.experience.map((exp, index) => (
+              <Experience
+                key={index}
+                company={exp.company}
+                role={exp.role}
+                duration={exp.duration}
+              />
+            ))}
+          </ul>
+        </section>
+        <footer className="flex w-full mt-12">
+          <div className="flex flex-row items-center gap-4 mx-auto">
+            <a
+              href="mailto:lajesfen@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Email
+            </a>
+            <a
+              href="https://github.com/lajesfen"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/luciano-aguirre-jesfen-4748ab152/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+          </div>
+        </footer>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }

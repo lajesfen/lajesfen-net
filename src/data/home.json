@@ -1,0 +1,17 @@
+{
+    "projects": [
+        {
+            "title": "Motion Transfer (Three.js)",
+            "description": "A brief description of the project.",
+            "path": "https://github.com/lajesfen/CS4016-motion-transfer"
+        }
+    ],
+    "experience": [
+        {
+            "company": "Eufonia Studio",
+            "role": "3D Art Lead",
+            "duration": "2021-2023",
+            "description": "Created low-poly assets for Twitch Rivals events and other real-time projects involving content creators."
+        }
+    ]
+}
