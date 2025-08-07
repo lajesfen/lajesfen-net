@@ -12,6 +12,15 @@ body {
 }
 
 a {
+  font-size: 14px;
   text-decoration: underline;
   color: #003ed0;
+}
+
+p {
+  font-size: 14px;
+}
+
+h1 {
+  font-size: 14px;
 }

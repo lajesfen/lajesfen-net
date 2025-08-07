@@ -6,13 +6,13 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="min-h-screen flex items-center justify-center">
-      <main className="relative outline-1 outline-black p-8 max-w-lg mx-auto">
+      <main className="relative outline-1 outline-black p-8 max-w-sm sm:max-w-lg mx-auto">
         <Image
           src={"/graphics/email.gif"}
           alt="Email"
           width={52}
           height={52}
-          className="absolute bottom-4 left-16"
+          className="absolute bottom-4 left-[2rem]"
           unoptimized
         />
         <section className="mb-6">
